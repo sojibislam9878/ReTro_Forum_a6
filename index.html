@@ -12,173 +12,390 @@
     />
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- *mulish font -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap"
+      rel="stylesheet"
+    />
     <!-- * google icons -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
     <!-- *extra css -->
-    <link rel="stylesheet" href="styles/style.css">
-
+    <link rel="stylesheet" href="styles/style.css" />
+    <!-- * font awesome cdn -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
   </head>
   <body class="font-mulish">
     <header class="container mx-auto p-4">
-        <nav class="flex justify-between mt-12">
-            <div>
-                <h1 class="text-4xl font-extrabold">ReTro</h1>
-            </div>
-            <div class="flex items-center gap-6">
-                <div class="md:flex gap-4 hidden ">
-                    <span class="material-symbols-outlined bg-gray-100 p-3 rounded-full border-2 border-gray-300 hover:cursor-pointer">
-                        home
-                        </span>
-                    <span class="material-symbols-outlined bg-gray-100 p-3 rounded-full border-2 border-gray-300 hover:cursor-pointer"">
-                        edit
-                        </span>
-                    <span class="material-symbols-outlined bg-gray-100 p-3 rounded-full border-2 border-gray-300 hover:cursor-pointer">
-                         person_add
-                        </span>
-                    <span class="material-symbols-outlined bg-gray-100 p-3 rounded-full border-2 border-gray-300 hover:cursor-pointer">
-                        flag
-                        </span>
-                </div>
-                <div>
-                    <button class="btn bg-[#797DFC] text-white text-xl rounded-full px-8">Sign in</button>
-                </div>
-            </div>
-        </nav>
-        <!-- * banner section -->
-        <div class="bg-[#12132D] bg-[url(assets/images/bgbanner.png)] bg-no-repeat bg-cover bg-bottom text-white rounded-3xl md:p-24 p-4 lg:flex justify-between mt-12">
-            <div class="flex-1">
-                <h1 class="md:text-5xl text-3xl font-extrabold md:mb-5 text-center md:text-left">Wellcome to the</h1>
-            <div class="mb-5 text-center md:text-left">
-                <h1 class="md:text-5xl text-4xl font-extrabold"><span class="pry-color">ReTro</span> Forum</h1>
-            </div>
-            <p class="text-xl font-medium opacity-85 md:w-1/2 mb-8">Share your favorite opinion and win and wp forum coffee mug!</p>
-            <div class="relative">
-                <!-- input -->
-                <input type="text" placeholder="Search here anything" class="font-medium md:p-5 p-4 rounded-xl md:rounded-full md:w-[20rem] mb-2 md:mb-0">
-                <button class="btn md:absolute bg-[#797DFC] border-0 text-white text-xl font-bold left-[210px]  bottom-2 md:rounded-full">Search</button>
-            </div>
-            </div>
-            <!-- right side -->
-            <div class="bg-white text-black p-12 rounded-xl mt-9 lg:mt-0">
-                <div class="flex justify-between gap-10 text-2xl font-medium pb-6">
-                    <p>Registered Users</p>
-                    <p>01</p>
-                </div>
-                <div class="flex justify-between gap-10 text-2xl font-medium pb-6">
-                    <p>Forum</p>
-                    <p>05</p>
-                </div>
-                <div class="flex justify-between gap-10 text-2xl font-medium pb-6">
-                    <p>Topics</p>
-                    <p>01</p>
-                </div>
-                <div class="flex justify-between gap-10 text-2xl font-medium">
-                    <p>Replies</p>
-                    <p>01</p>
-                </div>
-            </div>
+      <nav class="flex justify-between mt-12">
+        <div>
+          <h1 class="text-4xl font-extrabold">ReTro</h1>
         </div>
+        <div class="flex items-center gap-6">
+          <div class="md:flex gap-4 hidden">
+            <div class="tooltip" data-tip="Home">
+              <span
+                class="material-symbols-outlined bg-gray-100 p-3 rounded-full border-2 border-gray-300 hover:cursor-pointer"
+                >home
+              </span>
+            </div>
+            <div class="tooltip" data-tip="Edit">
+              <span
+                class="material-symbols-outlined bg-gray-100 p-3 rounded-full border-2 border-gray-300 hover:cursor-pointer"
+                >Edit
+              </span>
+            </div>
+            <div class="tooltip" data-tip="Friend">
+              <span
+                class="material-symbols-outlined bg-gray-100 p-3 rounded-full border-2 border-gray-300 hover:cursor-pointer"
+                >person_add
+              </span>
+            </div>
+            <div class="tooltip" data-tip="Notice">
+              <span
+                class="material-symbols-outlined bg-gray-100 p-3 rounded-full border-2 border-gray-300 hover:cursor-pointer"
+                >flag
+              </span>
+            </div>
+          </div>
+          <div>
+            <button
+              class="btn bg-[#797DFC] text-white text-xl rounded-full px-8"
+            >
+              Sign in
+            </button>
+          </div>
+        </div>
+      </nav>
+      <!-- * banner section -->
+      <div
+        class="bg-[#12132D] bg-[url(assets/images/bgbanner.png)] bg-no-repeat bg-cover bg-bottom text-white rounded-3xl md:p-24 p-4 lg:flex justify-between mt-12"
+      >
+        <div class="flex-1">
+          <h1
+            class="md:text-5xl text-3xl font-extrabold md:mb-5 text-center md:text-left"
+          >
+            Wellcome to the
+          </h1>
+          <div class="mb-5 text-center md:text-left">
+            <h1 class="md:text-5xl text-4xl font-extrabold">
+              <span class="pry-color">ReTro</span> Forum
+            </h1>
+          </div>
+          <p class="text-xl font-medium opacity-85 md:w-1/2 mb-8">
+            Share your favorite opinion and win and wp forum coffee mug!
+          </p>
+          <div class="relative">
+            <!-- input -->
+            <input
+              type="text"
+              placeholder="Search here anything"
+              class="font-medium md:p-5 p-4 rounded-xl md:rounded-full md:w-[20rem] mb-2 md:mb-0"
+            />
+            <button
+              class="btn md:absolute bg-[#797DFC] border-0 text-white text-xl font-bold left-[210px] bottom-2 md:rounded-full"
+            >
+              Search
+            </button>
+          </div>
+        </div>
+        <!-- right side -->
+        <div class="bg-white text-black p-12 rounded-xl mt-9 lg:mt-0">
+          <div class="flex justify-between gap-10 text-2xl font-medium pb-6">
+            <p>Registered Users</p>
+            <p>01</p>
+          </div>
+          <div class="flex justify-between gap-10 text-2xl font-medium pb-6">
+            <p>Forum</p>
+            <p>05</p>
+          </div>
+          <div class="flex justify-between gap-10 text-2xl font-medium pb-6">
+            <p>Topics</p>
+            <p>01</p>
+          </div>
+          <div class="flex justify-between gap-10 text-2xl font-medium">
+            <p>Replies</p>
+            <p>01</p>
+          </div>
+        </div>
+      </div>
     </header>
     <main>
-        <section id="discuss" class="container mx-auto p-4 lg:mt-36 md:mt-12">
-            <!-- section header and detalis -->
-            <div class="text-center">
-                <h1 class="text-4xl font-extrabold">Let's Discuss</h1>
-                <p class="text-lg opacity-60 lg:w-1/2 mx-auto mt-6 mb-12">Yes, you can run unit tests and view the results directly within the app. The integrated testing features allow for a streamlined .</p>
-            </div>
-            <div>
-                <div class="lg:flex-row flex flex-col-reverse justify-between gap-5 ">
-                    <!-- right section -->
-                    <div class="flex flex-col md:flex-row gap-6 p-10 bg-[#797DFC1A] rounded-2xl">
-                        <div>
-                            <!-- image -->
-                            <div class="indicator">
-                                <span class="indicator-item badge badge-accent"></span>
-                                <div class="grid w-32 h-32 bg-base-300 place-items-center"><img src="assets/images/logo.png" alt=""></div>
-                              </div>
-                        </div>
-                        <div>
-                            <div class=" border-b-2 border-dashed">
-                                <div class="flex gap-5">
-                                    <p class="font-medium opacity-80">#Music</p>
-                                    <p class="font-medium opacity-80">Author:Awlad hossain</p>
-                                </div>
-                                <h1 class="font-bold text-xl mt-3" >10 Kids Unaware of Their Halloween Costume</h1>
-                                <p class="text-lg opacity-60 mt-4 mb-5">It's one thing to subject yourself to ha Halloween costume mishap because, hey that's your prerogative</p>
-                            </div>
-                            <div class="flex flex-col md:flex-row justify-between items-center mt-5">
-                                <div class="flex md:gap-16 gap-4">
-                                    <div>
-                                        <p class="flex justify-center items-center gap-3"><span class="material-symbols-outlined">
-                                            comment
-                                            </span>560</p>
-                                    </div>
-                                    <div>
-                                        <p class="flex justify-center items-center gap-3"><span class="material-symbols-outlined">
-                                            visibility
-                                            </span>560</p>
-                                    </div>
-                                    <div>
-                                        <p class="flex justify-center items-center gap-3"><span class="material-symbols-outlined">
-                                            schedule
-                                            </span>560</p>
-                                    </div>
-                                </div>
-                                <button class="bg-green-400 rounded-full p-3 btn text-white">
-                                    <span class="material-symbols-outlined">
-                                        drafts
-                                        </span>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- left section -->
-                    <div class=" p-6 rounded-2xl bg-[#f97DFC1A]"> 
-                        <div>
-                            <div class="flex justify-between">
-                                <h1 class="text-xl font-bold">Title</h1>
-                                <h1 class="flex justify-center items-center"><span class="material-symbols-outlined text-green-300">
-                                    done_all
-                                    </span>Mark as read (<span>0</span>)</h1>
-                            </div>
-                            <div class="flex justify-center items-center gap-6 bg-white p-3 rounded-lg mt-5">
-                                <div class="">
-                                    <h1 class="font-semibold">
-                                        10 Kids Unaware of Their Halloween Costume
-                                    </h1>
-                                </div>
-                                <div class="opacity-60">
-                                    <P class="flex gap-2 justify-center items-center"><span class="material-symbols-outlined">
-                                        visibility
-                                        </span>500</P>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+      <section id="discuss" class="container mx-auto p-4 lg:mt-36 md:mt-12">
+        <!-- section header and detalis -->
+        <div class="text-center">
+          <h1 class="text-4xl font-extrabold">Let's Discuss</h1>
+          <p class="text-lg opacity-60 lg:w-1/2 mx-auto mt-6 mb-12">
+            Yes, you can run unit tests and view the results directly within the
+            app. The integrated testing features allow for a streamlined .
+          </p>
+        </div>
+        <div>
+          <div class="lg:flex-row flex flex-col-reverse justify-between gap-5">
+            <!-- right section -->
+            <div
+              class="flex flex-col md:flex-row gap-6 p-10 bg-[#797DFC1A] rounded-2xl"
+            >
+              <div>
+                <!-- image -->
+                <div class="indicator">
+                  <span class="indicator-item badge badge-accent"></span>
+                  <div class="grid w-32 h-32 bg-base-300 place-items-center">
+                    <img src="assets/images/logo.png" alt="" />
+                  </div>
                 </div>
+              </div>
+              <div>
+                <div class="border-b-2 border-dashed">
+                  <div class="flex gap-5">
+                    <p class="font-medium opacity-80">#Music</p>
+                    <p class="font-medium opacity-80">Author:Awlad hossain</p>
+                  </div>
+                  <h1 class="font-bold text-xl mt-3">
+                    10 Kids Unaware of Their Halloween Costume
+                  </h1>
+                  <p class="text-lg opacity-60 mt-4 mb-5">
+                    It's one thing to subject yourself to ha Halloween costume
+                    mishap because, hey that's your prerogative
+                  </p>
+                </div>
+                <div
+                  class="flex flex-col md:flex-row justify-between items-center mt-5"
+                >
+                  <div class="flex md:gap-16 gap-4">
+                    <div>
+                      <p class="flex justify-center items-center gap-3">
+                        <span class="material-symbols-outlined"> comment </span
+                        >560
+                      </p>
+                    </div>
+                    <div>
+                      <p class="flex justify-center items-center gap-3">
+                        <span class="material-symbols-outlined">
+                          visibility </span
+                        >560
+                      </p>
+                    </div>
+                    <div>
+                      <p class="flex justify-center items-center gap-3">
+                        <span class="material-symbols-outlined"> schedule </span
+                        >560
+                      </p>
+                    </div>
+                  </div>
+                  <button class="bg-green-400 rounded-full p-3 btn text-white">
+                    <span class="material-symbols-outlined"> drafts </span>
+                  </button>
+                </div>
+              </div>
             </div>
-        </section>
-        <!-- join forum section -->
-        <section id="join" class="container mx-auto p-4 mt-20">
-            <div class="bg-[#12132D] text-white flex rounded-3xl">
-                <div class="md:p-20 p-4 text-center md:text-left">
-                    <h1 class="text-4xl font-extrabold">Join Our Forum</h1>
-                    <p class="text-lg font-medium opacity-80 lg:w-2/3 mt-4">
-                        Share your favorite opinion and win and wp forum coffee mug! Yes, you can run unit tests and view the results directly within the app. 
+            <!-- left section -->
+            <div class="p-6 rounded-2xl bg-[#f97DFC1A]">
+              <div>
+                <div class="flex justify-between">
+                  <h1 class="text-xl font-bold">Title</h1>
+                  <h1 class="flex justify-center items-center">
+                    <span class="material-symbols-outlined text-green-300">
+                      done_all </span
+                    >Mark as read (<span>0</span>)
+                  </h1>
+                </div>
+                <div
+                  class="flex justify-center items-center gap-6 bg-white p-3 rounded-lg mt-5"
+                >
+                  <div class="">
+                    <h1 class="font-semibold">
+                      10 Kids Unaware of Their Halloween Costume
+                    </h1>
+                  </div>
+                  <div class="opacity-60">
+                    <p class="flex gap-2 justify-center items-center">
+                      <span class="material-symbols-outlined"> visibility </span
+                      >500
                     </p>
-                    <button class="btn text-white bg-[#797DFC] border-0 rounded-full text-xl md:mt-14 mt-3">Registered Now</button>
+                  </div>
                 </div>
-                <div class="p-8 hidden md:flex">
-                   <img class="object-center h-full w-full" src="assets/images/joinforum.png" alt="">
-                </div>
+              </div>
             </div>
-        </section>
+          </div>
+        </div>
+      </section>
+      <!-- join forum section -->
+      <section id="join" class="container mx-auto p-4 mt-20">
+        <div class="bg-[#12132D] text-white flex rounded-3xl">
+          <div class="md:p-20 p-4 text-center md:text-left">
+            <h1 class="text-4xl font-extrabold">Join Our Forum</h1>
+            <p class="text-lg font-medium opacity-80 lg:w-2/3 mt-4">
+              Share your favorite opinion and win and wp forum coffee mug! Yes,
+              you can run unit tests and view the results directly within the
+              app.
+            </p>
+            <button
+              class="btn text-white bg-[#797DFC] border-0 rounded-full text-xl md:mt-14 mt-3"
+            >
+              Registered Now
+            </button>
+          </div>
+          <div class="p-8 hidden md:flex">
+            <img
+              class="object-center h-full w-full"
+              src="assets/images/joinforum.png"
+              alt=""
+            />
+          </div>
+        </div>
+      </section>
+      <section id="post" class="container mx-auto p-4 pb-24">
+        <div class="text-center">
+          <h1 class="text-4xl font-extrabold">Latest Posts</h1>
+          <p class="text-lg opacity-60 lg:w-1/2 mx-auto mt-6 mb-12">
+            Yes, you can run unit tests and view the results directly within the
+            app. The integrated testing features allow for a streamlined .
+          </p>
+        </div>
+        <!-- post cards -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+          <div class="card bg-base-100 shadow-xl">
+            <figure>
+              <img
+                src="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg"
+                alt="Shoes"
+              />
+            </figure>
+            <div class="card-body">
+              <h3 class="flex gap-3 items-center">
+                <span class="material-symbols-outlined"> calendar_month </span>
+                29 januray 2024
+              </h3>
+              <h1 class="text-lg font-extrabold mt-4">
+                What will a mars habitat force that impact in our daily life!!!
+              </h1>
+              <p class="opacity-60 font-semibold">
+                Yes, you can run unit tests and view the results directly within
+                the app.
+              </p>
+              <div class="flex items-center">
+                <div class=" ">
+                  <img
+                    class="object-cover w-20 border rounded-full"
+                    src="assets/images/logo.png"
+                    alt=""
+                  />
+                </div>
+                <div>
+                  <h1 class="font-bold text-lg">cameraon williamson</h1>
+                  <p class="opacity-60">Unknown</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card bg-base-100 shadow-xl">
+            <figure>
+              <img
+                src="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg"
+                alt="Shoes"
+              />
+            </figure>
+            <div class="card-body">
+              <h3 class="flex gap-3 items-center">
+                <span class="material-symbols-outlined"> calendar_month </span>
+                29 januray 2024
+              </h3>
+              <h1>
+                What will a mars habitat force that impact in our daily life!!!
+              </h1>
+              <p>
+                Yes, you can run unit tests and view the results directly within
+                the app.
+              </p>
+              <div class="flex items-center">
+                <div class=" ">
+                  <img
+                    class="object-cover w-20 border rounded-full"
+                    src="assets/images/logo.png"
+                    alt=""
+                  />
+                </div>
+                <div>
+                  <h1>cameraon williamson</h1>
+                  <p>Unknown</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card bg-base-100 shadow-xl">
+            <figure>
+              <img
+                src="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg"
+                alt="Shoes"
+              />
+            </figure>
+            <div class="card-body">
+              <h3 class="flex gap-3 items-center">
+                <span class="material-symbols-outlined"> calendar_month </span>
+                29 januray 2024
+              </h3>
+              <h1>
+                What will a mars habitat force that impact in our daily life!!!
+              </h1>
+              <p>
+                Yes, you can run unit tests and view the results directly within
+                the app.
+              </p>
+              <div class="flex items-center">
+                <div class=" ">
+                  <img
+                    class="object-cover w-20 border rounded-full"
+                    src="assets/images/logo.png"
+                    alt=""
+                  />
+                </div>
+                <div>
+                  <h1>cameraon williamson</h1>
+                  <p>Unknown</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
-    <footer>
-
+    <footer
+      class="footer footer-center p-10 bg-base-200 text-base-content rounded"
+    >
+      <h1 class="text-5xl font-black mt-24">ReTro</h1>
+      <p class="lg:w-1/2 text-lg font-semibold opacity-80">
+        Contrary to popular belief, Lorem Ipsum is not simply random text. It
+        has roots in a piece of classical Latin literature from 45 BC
+      </p>
+      <div class="grid grid-flow-col gap-4">
+        <div class="text-5xl">
+          <i class="fa-brands fa-twitter"></i>
+        </div>
+        <div class="text-5xl">
+          <i class="fa-brands fa-facebook"></i>
+        </div>
+        <div class="text-5xl">
+          <i class="fa-brands fa-instagram"></i>
+        </div>
+        <div class="text-5xl">
+          <i class="fa-brands fa-github"></i>
+        </div>
+      </div>
+      <div class="divider divider-primary"></div>
+      <hr class="border-2 w-full border-gray-300" />
+      <aside class="">
+        <p class="">2017, All Rights Reserved.</p>
+      </aside>
     </footer>
 
     <script src="scripts/utilityl.js"></script>
