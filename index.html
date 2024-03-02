@@ -23,12 +23,12 @@
   </head>
   <body>
     <header class="container mx-auto p-4">
-        <nav class="flex justify-between">
+        <nav class="flex justify-between mt-12">
             <div>
                 <h1 class="text-4xl font-extrabold">ReTro</h1>
             </div>
             <div class="flex items-center gap-6">
-                <div class="flex gap-4">
+                <div class="md:flex gap-4 hidden ">
                     <span class="material-symbols-outlined bg-gray-100 p-3 rounded-full border-2 border-gray-300 hover:cursor-pointer">
                         home
                         </span>
@@ -43,10 +43,44 @@
                         </span>
                 </div>
                 <div>
-                    <button class="btn">Sign in</button>
+                    <button class="btn bg-[#797DFC] text-white text-xl rounded-full px-8">Sign in</button>
                 </div>
             </div>
         </nav>
+        <!-- * banner section -->
+        <div class="bg-[#12132D] bg-[url(assets/images/bgbanner.png)] bg-no-repeat bg-cover bg-bottom text-white rounded-3xl md:p-24 p-4 lg:flex justify-between mt-12">
+            <div class="flex-1">
+                <h1 class="md:text-5xl text-3xl font-extrabold md:mb-5 text-center md:text-left">Wellcome to the</h1>
+            <div class="mb-5 text-center md:text-left">
+                <h1 class="md:text-5xl text-4xl font-extrabold"><span class="pry-color">ReTro</span> Forum</h1>
+            </div>
+            <p class="text-xl font-medium opacity-85 md:w-1/2 mb-8">Share your favorite opinion and win and wp forum coffee mug!</p>
+            <div class="relative">
+                <!-- input -->
+                <input type="text" placeholder="Search here anything" class="font-medium md:p-5 p-4 rounded-xl md:rounded-full md:w-[20rem] mb-2 md:mb-0">
+                <button class="btn md:absolute bg-[#797DFC] border-0 text-white text-xl font-bold left-[220px]  bottom-2 md:rounded-full">Search</button>
+            </div>
+            </div>
+            <!-- right side -->
+            <div class="bg-white text-black p-12 rounded-xl mt-9 lg:mt-0">
+                <div class="flex justify-between gap-10 text-2xl font-medium pb-6">
+                    <p>Registered Users</p>
+                    <p>01</p>
+                </div>
+                <div class="flex justify-between gap-10 text-2xl font-medium pb-6">
+                    <p>Forum</p>
+                    <p>05</p>
+                </div>
+                <div class="flex justify-between gap-10 text-2xl font-medium pb-6">
+                    <p>Topics</p>
+                    <p>01</p>
+                </div>
+                <div class="flex justify-between gap-10 text-2xl font-medium">
+                    <p>Replies</p>
+                    <p>01</p>
+                </div>
+            </div>
+        </div>
 
     </header>
     <main>
