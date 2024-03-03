@@ -1,5 +1,5 @@
 const SearcePost = async() =>{
-    const res = await fetch("https://openapi.programming-hero.com/api/retro-forum/posts?category=coding")
+    const res = await fetch("https://openapi.programming-hero.com/api/retro-forum/posts?category=comedy")
 
     const data =await res.json();
     console.log(data.posts);
@@ -10,55 +10,49 @@ const SearcePost = async() =>{
         div.classList = `flex flex-col md:flex-row gap-6 p-10 bg-[#797DFC1A] rounded-2xl mb-4`
         div.innerHTML = `
         <div>
-        <!-- image -->
         <div class="indicator">
           <span class="indicator-item badge badge-accent"></span>
           <div class="grid w-32 h-32 bg-base-300 place-items-center">
-            <img src="assets/images/logo.png" alt="" />
+            <img src="${items.image}" alt="" />
           </div>
         </div>
       </div>
       <div>
         <div class="border-b-2 border-dashed">
           <div class="flex gap-5">
-            <p class="font-medium opacity-80">#Music</p>
-            <p class="font-medium opacity-80">Author:Awlad hossain</p>
+            <p class="font-medium opacity-80">#${items.category}</p>
+            <p class="font-medium opacity-80">Author:${items.author.name}</p>
           </div>
-          <h1 class="font-bold text-xl mt-3">
-            10 Kids Unaware of Their Halloween Costume
-          </h1>
-          <p class="text-lg opacity-60 mt-4 mb-5">
-            It's one thing to subject yourself to ha Halloween costume
-            mishap because, hey that's your prerogative
-          </p>
+          <h1 class="font-bold text-xl mt-3">${items.title}</h1>
+          <p class="text-lg opacity-60 mt-4 mb-5">${items.description}</p>
         </div>
         <div
           class="flex flex-col md:flex-row justify-between items-center mt-5"
         >
-          <div class="flex md:gap-16 gap-4">
-            <div>
+          <div class="flex md:gap-14 gap-4 items-center">
+            <div class="">
               <p class="flex justify-center items-center gap-3">
                 <span class="material-symbols-outlined"> comment </span
-                >560
+                >${items.comment_count} min
               </p>
             </div>
             <div>
               <p class="flex justify-center items-center gap-3">
                 <span class="material-symbols-outlined">
                   visibility </span
-                >560
+                >${items.view_count} min
               </p>
             </div>
             <div>
               <p class="flex justify-center items-center gap-3">
                 <span class="material-symbols-outlined"> schedule </span
-                >560
+                >${items.posted_time} min
               </p>
             </div>
           </div>
           <button class="bg-green-400 rounded-full p-3 btn text-white">
-            <span class="material-symbols-outlined"> drafts </span>
-          </button>
+          <span class="material-symbols-outlined"> drafts </span>
+        </button>
         </div>
         `
         DiscussContainer.appendChild(div)
