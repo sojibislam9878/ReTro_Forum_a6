@@ -6,13 +6,13 @@ const SearcePost = async(searchText) =>{
     const DiscussContainer = document.getElementById("DiscussContainer")
     DiscussContainer.textContent =""
     data.posts.forEach(items => {
-        // console.log(items);
+        console.log(items);
         const div = document.createElement("div")
         div.classList = `flex flex-col md:flex-row gap-6 p-10 bg-[#797DFC1A] rounded-2xl mb-4 `
         div.innerHTML = `
         <div class = "posts">
         <div class="indicator">
-          <span class="indicator-item badge badge-accent"></span>
+          <span class="indicator-item badge badge-accent onlineIndicatorClass"></span>
           <div class="grid w-32 h-32 bg-base-300 place-items-center">
             <img src="${items.image}" alt="" />
           </div>
@@ -57,12 +57,25 @@ const SearcePost = async(searchText) =>{
         </div>
         `
         DiscussContainer.appendChild(div)
+            const onlineIndicatorClass = document.getElementsByClassName("onlineIndicatorClass ")
+
+            for (const onlineIndicator of onlineIndicatorClass) {
+                const online = items.isActive;
+                if (online === true ) {
+                    onlineIndicator.classList = `indicator-item badge badge-accent onlineIndicator
+                    `
+                }else{
+                    onlineIndicator.classList = `indicator-item badge badge-secondary onlineIndicator
+                    `
+                }
+            }
     });
+
     handleSpinner(false);
 
 }
 
-SearcePost("comedy");
+SearcePost("coding");
 
 let markNumber = 0;
 const readMark = (button) => {
@@ -145,6 +158,9 @@ latestPosts()
 const handleSearch =()=>{
     const search = document.getElementById("search")
     const searchText = search.value;
+    if (searchText === "") {
+        alert("Write something")
+    }
     SearcePost(searchText);
     handleSpinner(true);
 }
