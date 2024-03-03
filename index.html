@@ -139,64 +139,10 @@
             app. The integrated testing features allow for a streamlined .
           </p>
         </div>
-        <div>
-          <div class="lg:flex-row flex flex-col-reverse justify-between gap-5">
+          <div  class="lg:flex-row flex flex-col-reverse justify-between gap-5">
             <!-- right section -->
-            <div
-              class="flex flex-col md:flex-row gap-6 p-10 bg-[#797DFC1A] rounded-2xl"
+            <div id="DiscussContainer"
             >
-              <div>
-                <!-- image -->
-                <div class="indicator">
-                  <span class="indicator-item badge badge-accent"></span>
-                  <div class="grid w-32 h-32 bg-base-300 place-items-center">
-                    <img src="assets/images/logo.png" alt="" />
-                  </div>
-                </div>
-              </div>
-              <div>
-                <div class="border-b-2 border-dashed">
-                  <div class="flex gap-5">
-                    <p class="font-medium opacity-80">#Music</p>
-                    <p class="font-medium opacity-80">Author:Awlad hossain</p>
-                  </div>
-                  <h1 class="font-bold text-xl mt-3">
-                    10 Kids Unaware of Their Halloween Costume
-                  </h1>
-                  <p class="text-lg opacity-60 mt-4 mb-5">
-                    It's one thing to subject yourself to ha Halloween costume
-                    mishap because, hey that's your prerogative
-                  </p>
-                </div>
-                <div
-                  class="flex flex-col md:flex-row justify-between items-center mt-5"
-                >
-                  <div class="flex md:gap-16 gap-4">
-                    <div>
-                      <p class="flex justify-center items-center gap-3">
-                        <span class="material-symbols-outlined"> comment </span
-                        >560
-                      </p>
-                    </div>
-                    <div>
-                      <p class="flex justify-center items-center gap-3">
-                        <span class="material-symbols-outlined">
-                          visibility </span
-                        >560
-                      </p>
-                    </div>
-                    <div>
-                      <p class="flex justify-center items-center gap-3">
-                        <span class="material-symbols-outlined"> schedule </span
-                        >560
-                      </p>
-                    </div>
-                  </div>
-                  <button class="bg-green-400 rounded-full p-3 btn text-white">
-                    <span class="material-symbols-outlined"> drafts </span>
-                  </button>
-                </div>
-              </div>
             </div>
             <!-- left section -->
             <div class="p-6 rounded-2xl bg-[#f97DFC1A]">
@@ -227,7 +173,6 @@
               </div>
             </div>
           </div>
-        </div>
       </section>
       <!-- join forum section -->
       <section id="join" class="container mx-auto p-4 mt-20">
@@ -263,8 +208,11 @@
           </p>
         </div>
         <!-- post cards -->
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-          <div class="card bg-base-100 shadow-xl">
+        <div
+          id="cardContainer"
+          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10"
+        >
+          <!-- <div class="card bg-base-100 shadow-xl">
             <figure>
               <img
                 src="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg"
@@ -297,75 +245,8 @@
                 </div>
               </div>
             </div>
-          </div>
-          <div class="card bg-base-100 shadow-xl">
-            <figure>
-              <img
-                src="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg"
-                alt="Shoes"
-              />
-            </figure>
-            <div class="card-body">
-              <h3 class="flex gap-3 items-center">
-                <span class="material-symbols-outlined"> calendar_month </span>
-                29 januray 2024
-              </h3>
-              <h1>
-                What will a mars habitat force that impact in our daily life!!!
-              </h1>
-              <p>
-                Yes, you can run unit tests and view the results directly within
-                the app.
-              </p>
-              <div class="flex items-center">
-                <div class=" ">
-                  <img
-                    class="object-cover w-20 border rounded-full"
-                    src="assets/images/logo.png"
-                    alt=""
-                  />
-                </div>
-                <div>
-                  <h1>cameraon williamson</h1>
-                  <p>Unknown</p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="card bg-base-100 shadow-xl">
-            <figure>
-              <img
-                src="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg"
-                alt="Shoes"
-              />
-            </figure>
-            <div class="card-body">
-              <h3 class="flex gap-3 items-center">
-                <span class="material-symbols-outlined"> calendar_month </span>
-                29 januray 2024
-              </h3>
-              <h1>
-                What will a mars habitat force that impact in our daily life!!!
-              </h1>
-              <p>
-                Yes, you can run unit tests and view the results directly within
-                the app.
-              </p>
-              <div class="flex items-center">
-                <div class=" ">
-                  <img
-                    class="object-cover w-20 border rounded-full"
-                    src="assets/images/logo.png"
-                    alt=""
-                  />
-                </div>
-                <div>
-                  <h1>cameraon williamson</h1>
-                  <p>Unknown</p>
-                </div>
-              </div>
-            </div>
-          </div>
+          </div> -->
+          <!--  -->
         </div>
       </section>
     </main>
@@ -377,17 +258,17 @@
         Contrary to popular belief, Lorem Ipsum is not simply random text. It
         has roots in a piece of classical Latin literature from 45 BC
       </p>
-      <div class="grid grid-flow-col gap-4">
-        <div class="text-5xl">
+      <div class="grid grid-flow-col md:gap-8 gap-4">
+        <div class="md:text-5xl text-3xl">
           <i class="fa-brands fa-twitter"></i>
         </div>
-        <div class="text-5xl">
+        <div class="md:text-5xl text-3xl">
           <i class="fa-brands fa-facebook"></i>
         </div>
-        <div class="text-5xl">
+        <div class="md:text-5xl text-3xl">
           <i class="fa-brands fa-instagram"></i>
         </div>
-        <div class="text-5xl">
+        <div class="md:text-5xl text-3xl">
           <i class="fa-brands fa-github"></i>
         </div>
       </div>
