@@ -6,7 +6,7 @@ const SearcePost = async(searchText) =>{
     const DiscussContainer = document.getElementById("DiscussContainer")
     DiscussContainer.textContent =""
     data.posts.forEach(items => {
-        console.log(items);
+        // console.log(items);
         const div = document.createElement("div")
         div.classList = `flex flex-col md:flex-row gap-6 p-10 bg-[#797DFC1A] rounded-2xl mb-4 `
         div.innerHTML = `
@@ -75,7 +75,7 @@ const SearcePost = async(searchText) =>{
 
 }
 
-SearcePost("coding");
+SearcePost("");
 
 let markNumber = 0;
 const readMark = (button) => {
@@ -111,11 +111,11 @@ const latestPosts = async() => {
     const res = await fetch("https://openapi.programming-hero.com/api/retro-forum/latest-posts");
 
     const data = await res.json();
+    console.log(data);
     const cardContainer = document.getElementById("cardContainer")
 
     data.forEach(items => {
         const div = document.createElement("div")
-        const date = items.author.posted_date;
         div.classList = `card bg-base-100 shadow-xl`
         div.innerHTML = `
         <figure>
@@ -175,3 +175,4 @@ const handleSpinner = (isloading) => {
       spinner.classList.add("hidden");
     }
   };
+  
