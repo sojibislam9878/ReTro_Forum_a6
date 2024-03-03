@@ -97,11 +97,13 @@
           <div class="relative">
             <!-- input -->
             <input
+              id="search"
               type="text"
               placeholder="Search here anything"
-              class="font-medium md:p-5 p-4 rounded-xl md:rounded-full md:w-[20rem] mb-2 md:mb-0"
+              class="font-medium md:p-5 p-4 rounded-xl md:rounded-full text-black md:w-[20rem] mb-2 md:mb-0"
             />
             <button
+            onclick="handleSearch()"
               class="btn md:absolute bg-[#797DFC] border-0 text-white text-xl font-bold left-[210px] bottom-2 md:rounded-full"
             >
               Search
@@ -139,10 +141,13 @@
             app. The integrated testing features allow for a streamlined .
           </p>
         </div>
-          <div  class="lg:flex-row flex flex-col-reverse justify-between gap-5">
+        <!-- loading  -->
+        <div id="spinner" class="text-center my-9 hidden">
+          <span class="loading loading-spinner loading-lg text-primary"></span>
+        </div>
+          <div  class="lg:flex-row flex flex-col justify-between gap-5 ">
             <!-- right section -->
-            <div id="DiscussContainer"
-            >
+            <div id="DiscussContainer">
             </div>
             <!-- left section -->
             <div class="p-6 rounded-2xl bg-[#f97DFC1A]">
@@ -212,41 +217,7 @@
           id="cardContainer"
           class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10"
         >
-          <!-- <div class="card bg-base-100 shadow-xl">
-            <figure>
-              <img
-                src="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg"
-                alt="Shoes"
-              />
-            </figure>
-            <div class="card-body">
-              <h3 class="flex gap-3 items-center">
-                <span class="material-symbols-outlined"> calendar_month </span>
-                29 januray 2024
-              </h3>
-              <h1 class="text-lg font-extrabold mt-4">
-                What will a mars habitat force that impact in our daily life!!!
-              </h1>
-              <p class="opacity-60 font-semibold">
-                Yes, you can run unit tests and view the results directly within
-                the app.
-              </p>
-              <div class="flex items-center">
-                <div class=" ">
-                  <img
-                    class="object-cover w-20 border rounded-full"
-                    src="assets/images/logo.png"
-                    alt=""
-                  />
-                </div>
-                <div>
-                  <h1 class="font-bold text-lg">cameraon williamson</h1>
-                  <p class="opacity-60">Unknown</p>
-                </div>
-              </div>
-            </div>
-          </div> -->
-          <!--  -->
+        <!-- dynamic value -->
         </div>
       </section>
     </main>

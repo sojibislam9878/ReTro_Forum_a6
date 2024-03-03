@@ -1,15 +1,16 @@
-const SearcePost = async() =>{
-    const res = await fetch("https://openapi.programming-hero.com/api/retro-forum/posts?category=comedy")
+const SearcePost = async(searchText) =>{
+    const res = await fetch(`https://openapi.programming-hero.com/api/retro-forum/posts?category=${searchText}`)
 
     const data =await res.json();
-    console.log(data.posts);
+    // console.log(data.posts);
     const DiscussContainer = document.getElementById("DiscussContainer")
+    DiscussContainer.textContent =""
     data.posts.forEach(items => {
-        console.log(items);
+        // console.log(items);
         const div = document.createElement("div")
-        div.classList = `flex flex-col md:flex-row gap-6 p-10 bg-[#797DFC1A] rounded-2xl mb-4`
+        div.classList = `flex flex-col md:flex-row gap-6 p-10 bg-[#797DFC1A] rounded-2xl mb-4 `
         div.innerHTML = `
-        <div>
+        <div class = "posts">
         <div class="indicator">
           <span class="indicator-item badge badge-accent"></span>
           <div class="grid w-32 h-32 bg-base-300 place-items-center">
@@ -19,11 +20,11 @@ const SearcePost = async() =>{
       </div>
       <div>
         <div class="border-b-2 border-dashed">
-          <div class="flex gap-5">
+          <div class=" md:flex gap-5">
             <p class="font-medium opacity-80">#${items.category}</p>
             <p class="font-medium opacity-80">Author:${items.author.name}</p>
           </div>
-          <h1 class="font-bold text-xl mt-3">${items.title}</h1>
+          <h6 class="font-bold text-xl mt-3">${items.title}</h6>
           <p class="text-lg opacity-60 mt-4 mb-5">${items.description}</p>
         </div>
         <div
@@ -50,17 +51,18 @@ const SearcePost = async() =>{
               </p>
             </div>
           </div>
-          <button class="bg-green-400 rounded-full p-3 btn text-white">
+          <button  onclick="readMore()" class="bg-green-400 rounded-full p-3 btn text-white rbtn">
           <span class="material-symbols-outlined"> drafts </span>
         </button>
         </div>
         `
         DiscussContainer.appendChild(div)
-    })
+    });
+    handleSpinner(false);
 
 }
 
-SearcePost();
+SearcePost("comedy");
 
 
 
@@ -72,6 +74,7 @@ const latestPosts = async() => {
 
     data.forEach(items => {
         const div = document.createElement("div")
+        const date = items.author.posted_date;
         div.classList = `card bg-base-100 shadow-xl`
         div.innerHTML = `
         <figure>
@@ -83,7 +86,7 @@ const latestPosts = async() => {
       <div class="card-body">
         <h3 class="flex gap-3 items-center">
           <span class="material-symbols-outlined"> calendar_month </span>
-          ${items.author.posted_date}
+          ${items.author.posted_date || "No publish date"}
         </h3>
         <h1 class="text-lg font-extrabold mt-4">${items.title}</h1>
         <p class="opacity-60 font-semibold">${items.description}</p>
@@ -97,13 +100,53 @@ const latestPosts = async() => {
           </div>
           <div class="">
             <h1 class="font-bold text-lg">${items.author.name}</h1>
-            <p class="opacity-60">${items.author.designation}</p>
+            <p class="opacity-60">${items.author.designation || "Unknown" }</p>
           </div>
         </div>
       </div>
         `
         cardContainer.appendChild(div)
     });
+    
 };
 
 latestPosts()
+
+
+// const readMore = () =>{
+//       timtim()
+    
+// }
+
+
+// function timtim() {
+//     const rbtn = document.getElementsByClassName("rbtn")
+//     for (const rtn of rbtn) {
+//         rtn.addEventListener("click", (e)=>{
+//         const h1 = e.target.parentNode.parentNode.parentNode.childNodes[1].childNodes[3].innerHTML;
+        
+//         console.log(h1);
+//     })
+//     }
+    
+// }
+
+// * handleSearch
+
+const handleSearch =()=>{
+    const search = document.getElementById("search")
+    const searchText = search.value;
+    SearcePost(searchText);
+    handleSpinner(true);
+}
+
+// * spinner handle
+
+const handleSpinner = (isloading) => {
+    const spinner = document.getElementById("spinner");
+    if (isloading) {
+      spinner.classList.remove("hidden");
+    } else {
+      spinner.classList.add("hidden");
+    }
+  };
