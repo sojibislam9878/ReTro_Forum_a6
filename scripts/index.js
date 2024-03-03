@@ -34,14 +34,14 @@ const SearcePost = async(searchText) =>{
             <div class="">
               <p class="flex justify-center items-center gap-3">
                 <span class="material-symbols-outlined"> comment </span
-                >${items.comment_count} min
+                >${items.comment_count}
               </p>
             </div>
-            <div>
-              <p class="flex justify-center items-center gap-3">
-                <span class="material-symbols-outlined">
+            <div class="view">
+              <p class="flex justify-center items-center gap-3 ">
+                <span class="  material-symbols-outlined">
                   visibility </span
-                >${items.view_count} min
+                >${items.view_count}
               </p>
             </div>
             <div>
@@ -51,7 +51,7 @@ const SearcePost = async(searchText) =>{
               </p>
             </div>
           </div>
-          <button  onclick="readMore()" class="bg-green-400 rounded-full p-3 btn text-white rbtn">
+          <button  onclick="readMark(this)" class="bg-green-400 rounded-full p-3 btn text-white rbtn">
           <span class="material-symbols-outlined"> drafts </span>
         </button>
         </div>
@@ -63,6 +63,34 @@ const SearcePost = async(searchText) =>{
 }
 
 SearcePost("comedy");
+
+let markNumber = 0;
+const readMark = (button) => {
+    const title = button.parentNode.parentNode.querySelector("h6");
+    const titleText =title.textContent
+    const viewCountElement = button.parentNode.parentNode.querySelector(".view");
+    const viewCount = viewCountElement.innerHTML.trim();
+
+    markNumber += 1;
+
+        const readMarkDiv = document.getElementById("readMarkDiv")
+        const div = document.createElement("div");
+        div.classList =`flex justify-between items-center gap-6 bg-white p-3 rounded-lg mt-5`
+        div.innerHTML = `
+        <div class="">
+        <h1 class="font-semibold">${titleText}</h1>
+      </div>
+      <div class="opacity-60">
+        <p class="flex gap-2 justify-center items-center">
+          ${viewCount}
+        </p>
+      </div>
+        `
+        readMarkDiv.appendChild(div);
+        const markCount = document.getElementById("markCount");
+        markCount.innerText = markNumber;
+    
+}
 
 
 
@@ -111,25 +139,6 @@ const latestPosts = async() => {
 };
 
 latestPosts()
-
-
-// const readMore = () =>{
-//       timtim()
-    
-// }
-
-
-// function timtim() {
-//     const rbtn = document.getElementsByClassName("rbtn")
-//     for (const rtn of rbtn) {
-//         rtn.addEventListener("click", (e)=>{
-//         const h1 = e.target.parentNode.parentNode.parentNode.childNodes[1].childNodes[3].innerHTML;
-        
-//         console.log(h1);
-//     })
-//     }
-    
-// }
 
 // * handleSearch
 
